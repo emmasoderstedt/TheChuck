@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheChuck.Pages.CategoryPage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout>
+
+        <Label Text="Categories!" HorizontalOptions="Center"></Label>
+
+        <ListView
+            ItemsSource="{Binding Categories}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Categories}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Clicked="GetCategoriesButton_Clicked" Text="Hämta kategorier"></Button>
+        <Button Clicked="SearchButton_Clicked" Text="Sök skämt"></Button>
+        <Button Clicked="JokeButton_Clicked" Text="Gå till skämtsida"></Button>
+
+    </StackLayout>
+   
 </ContentPage>

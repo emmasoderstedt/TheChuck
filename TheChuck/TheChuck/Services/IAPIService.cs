@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
+using TheChuck.Models;
+
 namespace TheChuck.Services
 {
-    public class IAPIService
+    public interface IAPIService
     {
-        public IAPIService()
-        {
-        }
+        Task<ChuckData> GetDataAsync(string uri);
     }
 }

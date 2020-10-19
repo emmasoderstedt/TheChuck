@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TheChuck.Pages;
 
 namespace TheChuck
 {
@@ -10,7 +11,7 @@ namespace TheChuck
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new CategoryPage());
         }
 
         protected override void OnStart()

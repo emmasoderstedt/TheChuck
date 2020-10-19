@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TheChuck.ViewModels
 {
-    public class SearchViewModel
+    public class SearchViewModel : BaseViewModel
     {
         public SearchViewModel()
         {
