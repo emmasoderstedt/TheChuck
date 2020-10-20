@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TheChuck.Models
 {
     public class Category
     {
-        public string Name { get; set; }
+        public List<string> ListOfCategories { get; set; }
+
     }
 }

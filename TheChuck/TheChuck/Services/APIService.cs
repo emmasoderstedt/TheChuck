@@ -22,6 +22,12 @@ namespace TheChuck.Services
             return JsonConvert.DeserializeObject<SearchReslut>(data);
         }
 
+        public async Task<string[]> GetCategories()
+        {
+            var data = await GetDataAsync(Constants.AllCategoriesEndpoint);
+            return JsonConvert.DeserializeObject<string[]>(data);
+        }
+
         public async Task<string> GetDataAsync(string uri)
         {
             try

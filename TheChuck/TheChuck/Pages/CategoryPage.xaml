@@ -1,34 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheChuck.Pages.CategoryPage">
-    <!--<StackLayout>
-
-        <Label Text="Categories!" HorizontalOptions="Center"></Label>
-
-        <ListView
-            ItemsSource="{Binding Categories}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Categories}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Button Clicked="GetCategoriesButton_Clicked" Text="Hämta kategorier"></Button>
-        <Button Clicked="JokeButton_Clicked" Text="Gå till skämtsida"></Button>
-
-    </StackLayout>-->
-
-   
 
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Entry name" Text="{Binding CategoryName}"></Entry>
-            <Button Text="Add" Command="{Binding AddCategoryCommand}"></Button>
-            <Button Text="Remove" Command="{Binding RemoveCategoryCommand}"></Button>
+            <Button Text="Click to get categories!" Command="{Binding ListCategories}"></Button>
 
             <ListView x:Name="Categories" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
-
             </ListView>
+
         <Button Clicked="SearchButton_Clicked" Text="Sök skämt"></Button>
         </StackLayout>
     </ContentPage.Content>
