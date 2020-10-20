@@ -3,10 +3,19 @@ namespace TheChuck.ViewModels
 {
     public class JokeViewModel :BaseViewModel
     {
-        public string Joke { get; set; } = "Det var en gång en tomat...";
+        public string Joke { get; set; }
+        public string Category { get; set; }
 
-        public JokeViewModel()
+        public JokeViewModel(string category)
         {
+            Category = category;
+        }
+
+        public async void GetJoke()
+        {
+            var joke = await APIService.GetJoke(Category);
+            Joke = joke.Value;
+            OnPropertyChanged(nameof(Joke));
         }
     }
 }

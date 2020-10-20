@@ -3,9 +3,9 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Click to get categories!" Command="{Binding ListCategories}"></Button>
+            <Label Text="Categories!"></Label>
 
-            <ListView x:Name="Categories" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+            <ListView x:Name="Categories" ItemsSource="{Binding Categories}" ItemTapped="Categories_ItemTapped">
             </ListView>
 
         <Button Clicked="SearchButton_Clicked" Text="Sök skämt"></Button>

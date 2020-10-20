@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TheChuck.Pages;
+using TheChuck.Services;
 
 namespace TheChuck
 {
@@ -11,6 +12,7 @@ namespace TheChuck
         {
             InitializeComponent();
 
+            RegisterService();
             MainPage = new NavigationPage(new CategoryPage());
         }
 
@@ -24,6 +26,12 @@ namespace TheChuck
 
         protected override void OnResume()
         {
+        }
+
+        private void RegisterService()
+        {
+            DependencyService.Register<IAPIService, APIService>();
+            DependencyService.Register<INavigationService, NavigationService>();
         }
     }
 }

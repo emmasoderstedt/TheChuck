@@ -9,7 +9,6 @@ namespace TheChuck.ViewModels
 {
     public class SearchViewModel : BaseViewModel
     {
-        APIService _APIService;
 
         public ICommand SearchCommand => new Command(SearchJoke);
 
@@ -20,18 +19,17 @@ namespace TheChuck.ViewModels
 
         public SearchViewModel()
         {
-            _APIService = new APIService();
             Jokes = new ObservableCollection<Joke>();       
         }
 
         async public void SearchJoke()
         {
-            _searchReslut = await _APIService.SearchJoke(SearchInput);
+            Jokes.Clear();
+            _searchReslut = await APIService.SearchJoke(SearchInput);
             foreach (Joke joke in _searchReslut.result)
             {
                 Jokes.Add(joke);
             }
-
 
         }
     }
