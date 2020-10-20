@@ -27,10 +27,5 @@ namespace TheChuck.Pages
         {
             await Navigation.PushAsync(new SearchPage());
         }
-
-        async void JokeButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-            await Navigation.PushAsync(new JokePage());
-        }
     }
 }
