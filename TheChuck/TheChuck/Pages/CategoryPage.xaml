@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheChuck.Pages.CategoryPage">
-    <StackLayout>
+    <!--<StackLayout>
 
         <Label Text="Categories!" HorizontalOptions="Center"></Label>
 
@@ -14,9 +14,23 @@
         </ListView>
 
         <Button Clicked="GetCategoriesButton_Clicked" Text="Hämta kategorier"></Button>
-        <Button Clicked="SearchButton_Clicked" Text="Sök skämt"></Button>
         <Button Clicked="JokeButton_Clicked" Text="Gå till skämtsida"></Button>
 
-    </StackLayout>
+    </StackLayout>-->
+
+   
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Entry name" Text="{Binding CategoryName}"></Entry>
+            <Button Text="Add" Command="{Binding AddCategoryCommand}"></Button>
+            <Button Text="Remove" Command="{Binding RemoveCategoryCommand}"></Button>
+
+            <ListView x:Name="Categories" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+
+            </ListView>
+        <Button Clicked="SearchButton_Clicked" Text="Sök skämt"></Button>
+        </StackLayout>
+    </ContentPage.Content>
    
 </ContentPage>

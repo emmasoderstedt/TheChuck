@@ -6,7 +6,6 @@
 
         <Label Text="{Binding Joke}"></Label>
 
-        <Button Clicked="GetJokeButton_Clicked" Text="Hämta skämt"></Button>
 
     </StackLayout>
 </ContentPage>

@@ -22,11 +22,5 @@ namespace TheChuck.Pages
 
 
         }
-
-        async void GetJokeButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-            ChuckData chuckData = await _APIService.GetDataAsync(Constants.JokeEndpoint);
-            BindingContext = chuckData;
-        }
     }
 }

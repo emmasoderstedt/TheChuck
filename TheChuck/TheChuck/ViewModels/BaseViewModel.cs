@@ -9,11 +9,11 @@ namespace TheChuck.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IAPIService APIService { get; set; }
+        public APIService APIService { get; set; }
 
         public BaseViewModel()
         {
-            APIService = DependencyService.Get<IAPIService>();
+            APIService = DependencyService.Get<APIService>();
 
         }
 

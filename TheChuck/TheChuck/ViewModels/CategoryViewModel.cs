@@ -10,14 +10,30 @@ namespace TheChuck.ViewModels
 {
     public class CategoryViewModel : BaseViewModel
     {
-        //public ICommand GetCategoriesCommand { get; }
-        //public ObservableCollection<ChuckData> Categories { get; set; } = new ObservableCollection<ChuckData>();
+        public ICommand AddCategoryCommand => new Command(AddCategory);
+        public ICommand RemoveCategoryCommand => new Command(RemoveCategory);
 
-
+        public ObservableCollection<string> Categories { get; set; }
+        public string CategoryName { get; set; }
+        public string SelectedCategory { get; set; }
 
         public CategoryViewModel()
         {
-           // GetCategoriesCommand = new Command(async () => await APIService.GetDataAsync(Constants.AllCategoriesEndpoint));
+            Categories = new ObservableCollection<string>();
+
+            Categories.Add("Animal");
+            Categories.Add("Fashion");
+            Categories.Add("Food");
+        }
+
+        public void AddCategory()
+        {
+            Categories.Add(CategoryName);
+        }
+
+        public void RemoveCategory()
+        {
+            Categories.Remove(SelectedCategory);
         }
 
     }

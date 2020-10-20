@@ -7,7 +7,7 @@ using TheChuck.Models;
 
 namespace TheChuck.Services
 {
-    public class APIService :IAPIService
+    public class APIService 
     {
         HttpClient _client;
 
@@ -16,24 +16,31 @@ namespace TheChuck.Services
             _client = new HttpClient();
         }
 
-        public async Task<ChuckData> GetDataAsync(string uri)
+        public async Task<SearchReslut> SearchJoke(string search)
         {
-            ChuckData chuckData = null;
+            var data = await GetDataAsync(Constants.SearchEndpoint + search);
+            return JsonConvert.DeserializeObject<SearchReslut>(data);
+        }
+
+        public async Task<string> GetDataAsync(string uri)
+        {
             try
             {
                 HttpResponseMessage response = await _client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
-                    string content = await response.Content.ReadAsStringAsync();
-                    chuckData = JsonConvert.DeserializeObject<ChuckData>(content);
+                    return await response.Content.ReadAsStringAsync();
+                    
                 }
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("\tERROR {0}", ex.Message);
             }
 
-            return chuckData;
+            return "";
+
         }
 
 

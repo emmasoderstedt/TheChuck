@@ -11,30 +11,16 @@ namespace TheChuck.Pages
 {
     public partial class CategoryPage : ContentPage 
     {
-        //CategoryViewModel viewModel;
+        CategoryViewModel viewModel;
         APIService _APIService;
 
         
         public CategoryPage()
         {
             InitializeComponent();
-            //BindingContext = viewModel = new CategoryViewModel();
+            BindingContext = viewModel = new CategoryViewModel();
             _APIService = new APIService();
 
-
-            //CategoryView.ItemsSource = ChuckCategories;
-
-            //ChuckCategories.Add("Animal");
-            //ChuckCategories.Add("Fashion");
-            //ChuckCategories.Add("Food");
-
-        }
-
-
-        async void GetCategoriesButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-            ChuckData chuckData = await _APIService.GetDataAsync(Constants.AllCategoriesEndpoint);
-            BindingContext = chuckData;
         }
 
         async void SearchButton_Clicked(System.Object sender, System.EventArgs e)
