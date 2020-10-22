@@ -29,10 +29,10 @@ namespace TheChuck.Pages
             await Navigation.PushAsync(new SearchPage());
         }
 
-
         void Categories_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var category = e.Item as string;
+            
             viewModel.GoToCategory(category);
         }
     }

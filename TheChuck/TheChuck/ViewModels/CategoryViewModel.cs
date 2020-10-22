@@ -15,7 +15,6 @@ namespace TheChuck.ViewModels
 
         public string CategoryName { get; set; }
 
-
         public CategoryViewModel()
         { 
             Categories = new ObservableCollection<string>();
@@ -34,6 +33,5 @@ namespace TheChuck.ViewModels
         {
             await NavigationService.GoToCategory(category);
         }
-
     }
 }

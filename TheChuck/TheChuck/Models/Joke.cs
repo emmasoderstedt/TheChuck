@@ -5,5 +5,7 @@ namespace TheChuck.Models
     {
         public string Value { get; set; }
 
+        //public bool IsFavorite { get; set; } = false;
+
     }
 }

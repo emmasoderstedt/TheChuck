@@ -5,7 +5,6 @@ namespace TheChuck.Models
 {
     public class Category
     {
-        public List<string> ListOfCategories { get; set; }
-
+        public string Name { get; set; }
     }
 }

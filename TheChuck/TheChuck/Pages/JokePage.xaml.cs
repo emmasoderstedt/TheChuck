@@ -23,5 +23,10 @@ namespace TheChuck.Pages
             viewModel.GetJoke();
             
         }
+
+        void OnImageButtonClicked(object sender, EventArgs e)
+        {
+            viewModel.UpdateIsFavorite();
+        }
     }
 }

@@ -4,8 +4,23 @@
 
         <Label Text="{Binding Category}" HorizontalOptions="Center"></Label>
 
-        <Label Text="{Binding Joke}"></Label>
+     
 
+      
+
+        
+            <Grid Padding="10" ColumnDefinitions="*,Auto ">
+                <Label Text="{Binding Joke}" ></Label>
+
+                <ImageButton Grid.RowSpan="2"
+                                Grid.Column="1"
+                        Source="https://pbs.twimg.com/profile_images/661582009886724096/fHxAzEV3.jpg"                                       
+                        Aspect="AspectFill"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        Clicked="OnImageButtonClicked"/>
+
+            </Grid>                     
 
     </StackLayout>
 </ContentPage>
