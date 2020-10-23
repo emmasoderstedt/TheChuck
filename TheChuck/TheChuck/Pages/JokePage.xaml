@@ -1,26 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheChuck.Pages.JokePage">
     <StackLayout>
-
-        <Label Text="{Binding Category}" HorizontalOptions="Center"></Label>
-
-     
-
-      
-
+        <Label Grid.Column="0" Text="{Binding Category}" HorizontalOptions="Center"></Label>
         
-            <Grid Padding="10" ColumnDefinitions="*,Auto ">
-                <Label Text="{Binding Joke}" ></Label>
+            <Grid Padding="10" ColumnDefinitions="*,Auto " >
 
-                <ImageButton Grid.RowSpan="2"
-                                Grid.Column="1"
-                        Source="https://pbs.twimg.com/profile_images/661582009886724096/fHxAzEV3.jpg"                                       
-                        Aspect="AspectFill"
-                        HeightRequest="50"
-                        WidthRequest="50"
-                        Clicked="OnImageButtonClicked"/>
+                <Label Text="{Binding Joke}"></Label>
+                <CheckBox Grid.Column="1" CheckedChanged="CheckBox_CheckedChanged"/>
 
-            </Grid>                     
+            </Grid>
 
+        <Button Text="Slumpa nytt skämt" Clicked="RandomButton_Clicked"/>
     </StackLayout>
 </ContentPage>

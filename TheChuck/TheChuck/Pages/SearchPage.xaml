@@ -5,13 +5,22 @@
         <Entry Placeholder="Sök skämt..." Text="{Binding SearchInput}"></Entry>
         <Button Text="Sök" Command="{Binding SearchCommand}"></Button>
 
-          <ListView x:Name="Jokes" ItemsSource="{Binding Jokes}" SelectedItem="{Binding SelectedJoke}">
+          <ListView x:Name="Jokes"
+                    ItemsSource="{Binding Jokes}"
+                    SelectedItem="{Binding SelectedJoke}"
+                    HasUnevenRows="True"
+                    
+                    >
               <ListView.ItemTemplate>
                   <DataTemplate>
-                      <TextCell Text="{Binding Value}">
-                          
-                      </TextCell>
-                  </DataTemplate>
+                      <ViewCell>
+                          <StackLayout>
+                              <Label Text="{Binding Value}" LineBreakMode="WordWrap" Margin="20,10,10,10"/>
+                          </StackLayout>
+                      </ViewCell>
+                      
+
+                </DataTemplate>
               </ListView.ItemTemplate>
 
             </ListView>

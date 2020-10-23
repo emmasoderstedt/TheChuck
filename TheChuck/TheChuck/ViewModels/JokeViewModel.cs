@@ -20,9 +20,9 @@ namespace TheChuck.ViewModels
             OnPropertyChanged(nameof(Joke));
         }
 
-        public void UpdateIsFavorite()
+        public void UpdateIsFavorite(bool isFavorite)
         {
-            if (IsFavorite)
+            if (isFavorite)
             {
                 IsFavorite = false;
             }

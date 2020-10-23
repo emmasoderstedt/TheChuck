@@ -24,9 +24,15 @@ namespace TheChuck.Pages
             
         }
 
-        void OnImageButtonClicked(object sender, EventArgs e)
+        void RandomButton_Clicked(object sender, EventArgs e)
         {
-            viewModel.UpdateIsFavorite();
+            viewModel.GetJoke();
+            OnPropertyChanged();
+        }
+
+        void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            viewModel.UpdateIsFavorite(e.Value);
         }
     }
 }
