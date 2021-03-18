@@ -1,4 +1,4 @@
-# TheChuck
+# The Chuck
 Slutuppgift i kursen Applikationsutveckling
 
 Uppgiften gick ut på att under en begränsad tid skapa en cross-plattform mobilapplikation i Xamarin.Forms med vissa specifika krav.
